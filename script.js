@@ -1,3 +1,9 @@
-document.querySelector('.cta-button').addEventListener('click', () => {
-    alert('Thank you for clicking! Your journey begins.');
+document.addEventListener("DOMContentLoaded", function () {
+    const menuToggle = document.getElementById("menu-toggle");
+    const mobileMenu = document.getElementById("mobile-menu");
+
+    menuToggle.addEventListener("click", function () {
+        menuToggle.classList.toggle("active");
+        mobileMenu.classList.toggle("active");
+    });
 });

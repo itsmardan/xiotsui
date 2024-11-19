@@ -7,51 +7,64 @@
     <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap" rel="stylesheet">
     <script src="script.js"></script>
+    
 </head>
 <body>
-    <header class="site-header">
-        <div class="container header-container">
+    <header class="main-header">
+        <div class="header-container">
             <!-- Logo -->
-            <div class="logo">
-                <a href="#">
-                    <img src="./images/logo-footer.png" alt="Logo" style="width: 250px; height: 80px; object-fit: contain;">
-                  </a>
-                                  <!-- <span class="logo-x">X</span><span class="logo-iots">iots</span> -->
-                 <!-- <img width="384px" height="75px" src="https://www.xiots.io/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Flogo.8da30745.png&w=3840&q=75"> -->
+            <div class="logo-container">
+                <a href="#" class="logo-link">
+                    <img src="./images/logo-footer.png" alt="Logo" class="logo-image">
+                </a>
             </div>
-            <!-- Navbar -->
-            <nav class="navbar">
+    
+            <!-- Mobile Menu Toggle -->
+            <div class="menu-toggle" id="menu-toggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+    
+            <!-- Desktop Navigation -->
+            <nav class="nav-container">
                 <ul class="nav-links">
                     <li><a href="#">About</a></li>
                     <li><a href="#">Portfolio</a></li>
                     <li class="dropdown">
                         <a href="#">Services</a>
-                        <ul class="dropdown-menu">
-                            <li><a href="#">Consulting</a></li>
-                            <li><a href="#">Development</a></li>
-                        </ul>
                     </li>
                 </ul>
-                <!-- CTA Button -->
-                <a href="#" class="cta-button">Let's Meet</a>
+                <a href="#" class="cta-button">Let’s Meet</a>
             </nav>
         </div>
-    </header>
-
-    <!-- Hero Section -->
-    <section class="hero">
-        <div class="container hero-container">
-            <div class="hero-content">
-                <h1>Premium Software Solutions Crafted to Fit Your Goals, Deadlines, and Budget</h1>
-                <p>Budget-friendly software made with expertise, ensuring top-notch quality and timely updates</p>
-                <button class="cta-hero">Let’s Build Your App & Software – Talk to Us!</button>
-                <blockquote>An incredible 160 hours saved every month – Malick, CEO, Nawab Manchester</blockquote>
-            </div>
-            <div class="hero-image">
-                <img src="./images/ph400.png" alt="Hero Mockup">
-            </div>
+    
+        <!-- Mobile Navigation Menu -->
+        <div class="mobile-menu" id="mobile-menu">
+            <ul class="mobile-nav-links">
+                <li><a href="#">Home</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Portfolio</a></li>
+                <li><a href="#">Services</a></li>
+            </ul>
+            <a href="#" class="mobile-cta-button">Let’s Meet</a>
         </div>
-    </section>
+    </header>
+    
+<!-- Hero Section -->
+<section class="hero">
+    <div class="container hero-container">
+        <div class="hero-content">
+            <h1>Premium Software Solutions Crafted to Fit Your Goals, Deadlines, and Budget</h1>
+            <p>Budget-friendly software made with expertise, ensuring top-notch quality and timely updates</p>
+            <button class="cta-hero">Let’s Build Your App & Software – Talk to Us!</button>
+            <blockquote>An incredible 160 hours saved every month – Malick, CEO, Nawab Manchester</blockquote>
+        </div>
+        <div class="hero-image">
+            <img src="./images/ph400.png" alt="Hero Mockup">
+        </div>
+    </div>
+</section>
 
 
 
@@ -489,14 +502,8 @@
 </footer>
 
 <script>
-
-document.querySelectorAll('.faq-item').forEach(item => {
-    item.addEventListener('click', () => {
-      item.classList.toggle('active');
-    });
-  });
-  
 </script>
+
 
 
 </body>
