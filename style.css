@@ -238,6 +238,7 @@ body {
         flex-direction: column;
         text-align: center;
         gap: 20px;
+        margin-top:100px;
     }
 
     .hero-content {
@@ -660,9 +661,7 @@ blockquote {
     }
 }
 
-
-/*api section */ 
-
+/* API Integration Section */
 .api-integration-section {
     background-color: #000;
     color: #fff;
@@ -693,7 +692,6 @@ blockquote {
 .feature-box {
     flex: 1 1 300px;
     max-width: 300px;
-    background: linear-gradient(145deg, #111, #1a1a1a);
     border-radius: 12px;
     padding: 25px;
     text-align: center;
@@ -707,9 +705,16 @@ blockquote {
 }
 
 .feature-box .icon {
-    font-size: 50px;
-    color: #04c3ff;
-    margin-bottom: 15px;
+    font-size: 80px; /* Large icons */
+    color: #04c3ff; /* Icon color */
+    margin: 0 auto 15px; /* Auto horizontal margin for centering */
+    display: flex; /* Flexbox for perfect centering */
+    justify-content: center;
+    align-items: center;
+    height: 100px; /* Consistent icon area size */
+    width: 100px;
+    border-radius: 50%;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
 }
 
 .feature-box h3 {
@@ -725,6 +730,7 @@ blockquote {
     line-height: 1.5;
 }
 
+/* Responsive Design */
 @media (max-width: 768px) {
     .api-header h2 {
         font-size: 28px;
@@ -743,6 +749,7 @@ blockquote {
         max-width: 100%;
     }
 }
+
 
 
 /* Outsourced Development Section */
@@ -849,8 +856,6 @@ blockquote {
         font-size: 18px;
     }
 }
-
-
 /* Quality Assurance & Security Section */
 .quality-security {
     background-color: #f9f9f9;
@@ -862,12 +867,12 @@ blockquote {
     font-size: 32px;
     font-weight: 700;
     color: #000;
-    margin-bottom: 10px;
+    margin-bottom: 20px;
 }
 
 .quality-security p {
-    font-size: 14px;
-    color: #fff;
+    font-size: 16px;
+    color: #555;
     max-width: 600px;
     margin: 0 auto 30px;
     line-height: 1.6;
@@ -882,7 +887,7 @@ blockquote {
 }
 
 .commitment {
-    flex: 1 1 40%;
+    flex: 1 1 45%;
     background-color: #000;
     padding: 30px;
     border-radius: 10px;
@@ -895,7 +900,7 @@ blockquote {
 }
 
 .commitment h3 {
-    font-size: 20px;
+    font-size: 22px;
     font-weight: 600;
     color: #fff;
     margin-bottom: 15px;
@@ -905,34 +910,26 @@ blockquote {
     font-size: 14px;
     line-height: 1.8;
     color: #fff;
-    margin: 0;
 }
 
 .commitment .extra-content {
-    font-size: 14px;
-    line-height: 1.8;
-    color: #fff;
     margin-top: 15px;
 }
 
 .features {
-    flex: 1 1 55%;
+    flex: 1 1 50%;
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: repeat(2, 1fr);
     gap: 20px;
-    align-items: stretch;
 }
 
 .feature-item {
     background-color: #000;
-    padding: 20px;
+    padding: 25px;
     border-radius: 10px;
-    text-align: left;
+    text-align: center;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
     color: #fff;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
     transition: transform 0.3s, box-shadow 0.3s;
 }
 
@@ -941,16 +938,25 @@ blockquote {
     box-shadow: 0 6px 12px rgba(0, 0, 0, 0.5);
 }
 
-.feature-item i {
-    font-size: 24px;
+.feature-icon {
+    font-size: 48px; /* Larger icon size */
     color: #04c3ff;
-    margin-bottom: 10px;
+    margin-bottom: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 80px;
+    width: 80px;
+    background-color: #111;
+    border-radius: 50%; /* Circular background */
+    margin: 0 auto; /* Center horizontally */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
 }
 
 .feature-item h4 {
-    font-size: 18px;
+    font-size: 20px;
     font-weight: 600;
-    margin-bottom: 8px;
+    margin-bottom: 10px;
 }
 
 .feature-item p {
@@ -959,26 +965,32 @@ blockquote {
     margin: 0;
 }
 
+/* Responsive Adjustments */
 @media (max-width: 768px) {
     .content {
         flex-direction: column;
+        gap: 30px;
+    }
+
+    .commitment {
+        text-align: center;
+        flex: 1;
     }
 
     .features {
         grid-template-columns: 1fr;
     }
 
-    .commitment {
-        flex: 1;
-        text-align: center;
+    .feature-item {
+        padding: 20px;
     }
 
-    .commitment p,
-    .commitment .extra-content {
-        text-align: center;
+    .feature-icon {
+        font-size: 36px; /* Smaller icon for mobile */
+        height: 70px;
+        width: 70px;
     }
 }
-
 
 /* FAQ Section */
 .faq-section {
