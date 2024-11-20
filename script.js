@@ -37,3 +37,15 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     });
 });
+document.addEventListener("DOMContentLoaded", function () {
+    const track = document.querySelector(".reviews-track");
+    let currentIndex = 0;
+    const reviews = document.querySelectorAll(".review-box");
+    const reviewsToShow = 3;
+
+    setInterval(() => {
+        currentIndex = (currentIndex + 1) % (reviews.length - reviewsToShow + 1);
+        const offset = currentIndex * -300; // Adjust based on review-box width
+        track.style.transform = `translateX(${offset}px)`;
+    }, 3000);
+});
