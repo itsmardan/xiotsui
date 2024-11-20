@@ -1,51 +1,41 @@
-document.addEventListener("DOMContentLoaded", function () {
+document.addEventListener("DOMContentLoaded", () => {
     // Mobile Menu Toggle
     const menuToggle = document.getElementById("menu-toggle");
     const mobileMenu = document.getElementById("mobile-menu");
 
-    menuToggle.addEventListener("click", function () {
+    menuToggle?.addEventListener("click", () => {
         menuToggle.classList.toggle("active");
-        mobileMenu.classList.toggle("active");
+        mobileMenu?.classList.toggle("active");
     });
 
     // FAQ Toggle
-    const faqItems = document.querySelectorAll(".faq-item");
-
-    faqItems.forEach(item => {
+    document.querySelectorAll(".faq-item").forEach(item => {
         const question = item.querySelector(".faq-question");
-        question.addEventListener("click", function () {
+        const toggleIcon = question?.querySelector(".faq-toggle");
+
+        question?.addEventListener("click", () => {
             item.classList.toggle("active");
+            toggleIcon.textContent = item.classList.contains("active") ? "-" : "+";
 
-            // Toggle "+" and "-" for the FAQ toggle icon
-            const toggleIcon = question.querySelector(".faq-toggle");
-            if (item.classList.contains("active")) {
-                toggleIcon.textContent = "-";
-            } else {
-                toggleIcon.textContent = "+";
-            }
-
-            // Optionally, close other open FAQs
-            faqItems.forEach(otherItem => {
+            document.querySelectorAll(".faq-item").forEach(otherItem => {
                 if (otherItem !== item) {
                     otherItem.classList.remove("active");
-                    const otherIcon = otherItem.querySelector(".faq-toggle");
-                    if (otherIcon) {
-                        otherIcon.textContent = "+";
-                    }
+                    otherItem.querySelector(".faq-toggle")?.textContent = "+";
                 }
             });
         });
     });
-});
-document.addEventListener("DOMContentLoaded", function () {
+
+    // Reviews Slider
     const track = document.querySelector(".reviews-track");
-    let currentIndex = 0;
     const reviews = document.querySelectorAll(".review-box");
     const reviewsToShow = 3;
+    let currentIndex = 0;
 
-    setInterval(() => {
-        currentIndex = (currentIndex + 1) % (reviews.length - reviewsToShow + 1);
-        const offset = currentIndex * -300; // Adjust based on review-box width
-        track.style.transform = `translateX(${offset}px)`;
-    }, 3000);
+    if (track && reviews.length > reviewsToShow) {
+        setInterval(() => {
+            currentIndex = (currentIndex + 1) % (reviews.length - reviewsToShow + 1);
+            track.style.transform = `translateX(${currentIndex * -300}px)`; // Adjust width if necessary
+        }, 3000);
+    }
 });
